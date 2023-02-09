@@ -79,51 +79,64 @@
 				<li><a href="#" class="active">Dashboard</a></li>
 			</ul>
 			<div class="info-data">
+				<!-- Bitcoin Resultados -->
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>Información</h2>
-							<p>Resultados</p>
-						</div>
-						<i class='bx bx-trending-up icon' ></i>
-					</div>
-					<span class="progress" data-value="40%"></span>
-					<span class="label">40%</span>
-				</div>
-				<div class="card">
-					<div class="head">
-						<div>
-							<h2>Información</h2>
+							<h2>Bitcoin news</h2>
 							<p>Resultados</p>
 						</div>
 						<i class='bx bx-trending-down icon down' ></i>
 					</div>
-					<span class="progress" data-value="60%"></span>
-					<span class="label">60%</span>
+					<span class="progress" id="bitcoinResult"></span>
+					<span class="label info-bitcoin"></span>
 				</div>
+				<!-- ./Bitcoin Resultados -->
+
+				<!-- Apple Resultados -->
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>Información</h2>
+							<h2>Apple news</h2>
 							<p>Resultados</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div>
-					<span class="progress" data-value="30%"></span>
-					<span class="label">30%</span>
+					<span class="progress" id="appleResult"></span>
+					<span class="label info-apple"></span>
 				</div>
+				<!-- ./Apple Resultados -->
+
+				<!-- Business Resultados -->
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>Información</h2>
+							<h2>Business news</h2>
 							<p>Resultados</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div>
-					<span class="progress" data-value="80%"></span>
-					<span class="label">80%</span>
+					<span class="progress" id="businessResult"></span>
+					<span class="label info-business">30%</span>
 				</div>
+				<!-- ./Business Resultados -->
+
+				<!-- Tech Resultados -->
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>Tech news</h2>
+							<p>Resultados</p>
+						</div>
+						<i class='bx bx-trending-up icon' ></i>
+					</div>
+					<span class="progress" id="techResult"></span>
+					<span class="label info-tech">80%</span>
+				</div>
+				<!-- ./ Tech Resultados -->
 			</div>
+
+			<!-- Reporte Chart -->
 			<div class="data">
 				<div class="content-data">
 					<div class="head">
@@ -198,6 +211,7 @@
 					</form>
 				</div>
 			</div>
+			<!-- ./Reporte Chart -->
 		</main>
 		<!-- MAIN -->
 	</section>
@@ -205,7 +219,7 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 	<script src="script.js"></script>
-	<script src="data.js" type="module"></script>
-	<script src="url.js" type="module"></script>
+	<script src="data.js"></script>
+	<script src="url.js"></script>
 </body>
 </html>

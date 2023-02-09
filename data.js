@@ -1,94 +1,211 @@
 
-import fetch from 'node-fetch'
-globalThis.fetch = fetch
-//Bitcoin
-let urlBitcoin = 'https://newsapi.org/v2/everything?q=bitcoin';
+const apiKey = '163de2169e8044f4ab9ceb0b3a734024';
 
-function init(){
-    getDataApple(urlApple),
-    getDataBitcoin(urlBitcoin),
-    getDataBusines(urlBusiness)
-   getDataTech(urlTechCrunch)
-}
+// Bitcoin news
+const dataBitcoin = async() => {
+        const bitcoinName = 'bitcoin';
+        // let url = `https://newsapi.org/v2/everything?q=${bitcoinName}&from=${octoberDate}&to=${novemberDate}&sortBy=popularity&apiKey=${apiKey}`;
+        // let url = `https://newsapi.org/v2/top-headlines?country=${argentinaCountry}&category=${bitcoinName}&apiKey=${apiKey}`;
+        let url = `https://newsapi.org/v2/everything?q=${bitcoinName}&apiKey=${apiKey}`;
 
 
-//Función para obtener los articulos referentes a bitcoin
-const getDataBitcoin = async (urlBitcoin) => {
-    const response = await fetch(urlBitcoin, {
-       headers: {
-            'x-api-key': '9d2948fc7fe44af28e2ad315bf58d64c',
-            'Accept': '*/*',
-        }
-    })
-    //console.log('responde', response)
-    const data = await response.json()
-    //console.log(data);
-    //dataArticlesBitcoin = data.articles;
-    //console.log('array',dataArticlesBitcoin)
-}
+        
+        const response = await fetch(url);
+        const main = await response.json();
+        console.log(main)  
+        const { totalResults } = main; 
+        const bitcoinResults = totalResults;
+
+        // Imprimir en html 
+        const printBitcoinHtml = document.querySelector('.info-bitcoin');
+        printBitcoinHtml.innerHTML = bitcoinResults;
+        console.log( 'Resultados Totales Bitcoin: ' + bitcoinResults );
 
 
+        // Grafico 
+        var options = {
+            chart: {
+              height: 200,
+              width: 220,
+              type: "donut",
+            },
+            series: [bitcoinResults],
+            plotOptions: {
+              radialBar: {
+                dataLabels: {
+                  total: {
+                    show: true,
+                    label: 'Resultados Totales',
+                    series: bitcoinResults
+                  }
+                }
+              }
+            },
+            labels: ['Bitcoin']
+          };
+          
+        new ApexCharts(document.querySelector("#bitcoinResult"), options).render();
 
-//Apple
-let urlApple = 'https://newsapi.org/v2/everything?q=apple&from=2023-02-04&to=2023-02-04&sortBy=popularity'
-let dataArticleApple = {};
+    }
 
-//Función para encontrar los articulos de apple
-const getDataApple = async (urlApple) => {
-   const response = fetch(urlApple,{
-        headers: {
-            'x-api-key': '9d2948fc7fe44af28e2ad315bf58d64c',
-            'Accept': '*/*',
-        }
-    })
-        .then((response) => response.json())
-        .then(function (data) { 
-            dataArticleApple = data.articles;
-           //console.log(dataArticleApple)
-         })
-        .catch(error => console.log(error))
-}
-
-//Business USA
-let urlBusiness='https://newsapi.org/v2/top-headlines?country=us&category=business'
-let articleBusiness = {}
-
-//Función para encontrar los articulos de Busines de USA
-const getDataBusines = async (urlBusiness) => {
-    await fetch(urlBusiness,{
-        headers: {
-            'x-api-key': '9d2948fc7fe44af28e2ad315bf58d64c',
-            'Accept': '*/*',
-        }
-    })
-        .then((response) => response.json())
-        .then(function (data) { 
-            articleBusiness = data.articles;
-           //console.log(articleBusiness)
-         })
-        .catch(error => console.log(error))
-}
-
-//Tech
-let urlTechCrunch='https://newsapi.org/v2/top-headlines?sources=techcrunch'
- let articleTech = {}
-
-// //Función para encontrar Los principales titulares de TechCrunch ahora mismo
-function  datos()  {
-    fetch(urlTechCrunch,{
-        headers: {
-            'x-api-key': '9d2948fc7fe44af28e2ad315bf58d64c',
-            'Accept': '*/*',
-        }
-    })
-        .then((response) => response.json())
-        .then(function (data) { 
-            articleTech = data.articles;
+// Apple news
+const dataApple = async ()=> {
+    const appleName = 'apple';
+    let url = `https://newsapi.org/v2/everything?q=${appleName}&apiKey=${apiKey}`
+        
+    const response = await fetch(url);
+    const main = await response.json();  
+    const { totalResults } = main; 
+    const appleResults = totalResults;
     
-         })
-        .catch(error => console.log(error))
+    // Imprimir en html
+    const printAppleHtml = document.querySelector('.info-apple');
+    printAppleHtml.innerHTML = appleResults;
+    console.log( 'Resultados Totales Apple : ' + appleResults );
+
+
+    // Grafico 
+    var options = {
+        chart: {
+            height: 200,
+            width: 220,
+            type: "donut",
+        },
+        series: [appleResults],
+        plotOptions: {
+            radialBar: {
+            dataLabels: {
+                total: {
+                show: true,
+                label: 'Resultados Totales',
+                series: appleResults
+                }
+            }
+            }
+        },
+        labels: [appleName]        
+    };
+        
+    new ApexCharts(document.querySelector("#appleResult"), options).render();
+
 }
- init()
+
+// Business news
+const dataBussinessUSA = async()=> {
+    const bussinessName = 'business';
+    let url = `https://newsapi.org/v2/everything?q=${bussinessName}&apiKey=${apiKey}`
+        
+    const response = await fetch(url);
+    const main = await response.json();  
+    const { totalResults } = main; 
+    const businessResults = totalResults;
+
+    // Imprimir en html
+    const printBusinessHtml = document.querySelector('.info-business');
+    printBusinessHtml.innerHTML = businessResults;
+    console.log( 'Resultados Totales Bussiness : ' + businessResults );
+
+    // Grafico 
+    var options = {
+        chart: {
+            height: 200,
+            width: 220,
+            type: "donut",
+        },
+        series: [businessResults],
+        plotOptions: {
+            radialBar: {
+            dataLabels: {
+                total: {
+                show: true,
+                label: 'Resultados Totales',
+                series: businessResults
+                }
+            }
+            }
+        },
+        labels: [bussinessName]        
+    };
+        
+    new ApexCharts(document.querySelector("#businessResult"), options).render();
+
+}
+
+// tech news
+const dataTech = async() => {
+    const techName = 'tech'
+    let url = `https://newsapi.org/v2/everything?q=${techName}&apiKey=${apiKey}`
+        
+    const response = await fetch(url);
+    const main = await response.json();  
+    const { totalResults } = main; 
+    const techResults = totalResults;
+    
+    // Imprimir en html
+    const printTechHtml = document.querySelector('.info-tech');
+    printTechHtml.innerHTML = techResults;
+    console.log( 'Resultados Totales Tech : ' + techResults );
+
+    // Grafico 
+    var options = {
+        chart: {
+            height: 200,
+            width: 220,
+            type: "donut",
+        },
+        series: [techResults],
+        plotOptions: {
+            radialBar: {
+            dataLabels: {
+                total: {
+                show: true,
+                label: 'Resultados Totales',
+                series: techResults
+                }
+            }
+            }
+        },
+        labels: [techName]        
+    };
+        
+    new ApexCharts(document.querySelector("#techResult"), options).render();
+    // dasdsdasdsad
+    const chartResults = ()=> {
+        let options = {
+            chart: {
+              type: 'bar'
+            },
+            plotOptions: {
+                bar: {
+                  horizontal: true
+                }
+              }                
+            ,
+            series: [{
+              name: 'Total Results',
+              data: [techResults]
+            }],
+            xaxis: {
+              categories: [techName]
+            }
+          }
+          
+          var chart = new ApexCharts(document.querySelector("#"), options);
+          
+          chart.render();
+    }
+    
+    chartResults();
+
+}
 
 
+dataBitcoin();
+dataApple();
+dataBussinessUSA();
+dataTech();
 
+// module.exports = dataBitcoin();
+// module.exports = dataApple();
+// module.exports = dataBussinessUSA();
+// module.exports = dataTech();
