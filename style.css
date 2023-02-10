@@ -349,11 +349,13 @@ main .breadcrumbs li.divider {
 main .info-data {
 	margin-top: 36px;
 	display: grid;
+	text-align: center;
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 	grid-gap: 20px;
 }
 main .info-data .card {
 	padding: 20px;
+	justify-content: center;
 	border-radius: 10px;
 	background: var(--light);
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
@@ -379,7 +381,7 @@ main .card .head .icon.down {
 }
 main .card .progress {
 	display: block;
-	margin-top: 24px;
+	margin-top: 30px;
 	height: 10px;
 	width: 100%;
 	border-radius: 10px;
@@ -398,8 +400,9 @@ main .card .progress::before {
 	width: var(--value);
 }
 main .card .label {
-	font-size: 14px;
+	font-size: 32px;
 	font-weight: 700;
+	
 }
 main .data {
 	display: flex;

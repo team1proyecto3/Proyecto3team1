@@ -1,5 +1,8 @@
 
-const apiKey = '163de2169e8044f4ab9ceb0b3a734024';
+const apiKey = '353bd1fc1cfc4d66b96e320dae71fac9';
+
+
+//163de2169e8044f4ab9ceb0b3a734024
 
 // Bitcoin news
 const dataBitcoin = async() => {
@@ -16,37 +19,38 @@ const dataBitcoin = async() => {
         const { totalResults } = main; 
         const bitcoinResults = totalResults;
 
-        // Imprimir en html 
+        //Imprimir en html 
         const printBitcoinHtml = document.querySelector('.info-bitcoin');
         printBitcoinHtml.innerHTML = bitcoinResults;
         console.log( 'Resultados Totales Bitcoin: ' + bitcoinResults );
 
 
         // Grafico 
-        var options = {
-            chart: {
-              height: 200,
-              width: 220,
-              type: "donut",
-            },
-            series: [bitcoinResults],
-            plotOptions: {
-              radialBar: {
-                dataLabels: {
-                  total: {
-                    show: true,
-                    label: 'Resultados Totales',
-                    series: bitcoinResults
-                  }
-                }
-              }
-            },
-            labels: ['Bitcoin']
-          };
+    //     var options = {
+    //         chart: {
+    //           height: 200,
+    //           width: 220,
+    //           type: "donut",
+    //         },
+    //         series: [bitcoinResults],
+    //         plotOptions: {
+    //           radialBar: {
+    //             dataLabels: {
+    //               total: {
+    //                 show: true,
+    //                 label: 'Resultados Totales',
+    //                 series: bitcoinResults
+    //               }
+    //             }
+    //           }
+    //         },
+    //         labels: ['Bitcoin']
+    //       };
           
-        new ApexCharts(document.querySelector("#bitcoinResult"), options).render();
+    //     new ApexCharts(document.querySelector("#bitcoinResult"), options).render();
 
     }
+    
 
 // Apple news
 const dataApple = async ()=> {
@@ -65,28 +69,28 @@ const dataApple = async ()=> {
 
 
     // Grafico 
-    var options = {
-        chart: {
-            height: 200,
-            width: 220,
-            type: "donut",
-        },
-        series: [appleResults],
-        plotOptions: {
-            radialBar: {
-            dataLabels: {
-                total: {
-                show: true,
-                label: 'Resultados Totales',
-                series: appleResults
-                }
-            }
-            }
-        },
-        labels: [appleName]        
-    };
+    // var options = {
+    //     chart: {
+    //         height: 200,
+    //         width: 220,
+    //         type: "donut",
+    //     },
+    //     series: [appleResults],
+    //     plotOptions: {
+    //         radialBar: {
+    //         dataLabels: {
+    //             total: {
+    //             show: true,
+    //             label: 'Resultados Totales',
+    //             series: appleResults
+    //             }
+    //         }
+    //         }
+    //     },
+    //     labels: [appleName]        
+    // };
         
-    new ApexCharts(document.querySelector("#appleResult"), options).render();
+    // new ApexCharts(document.querySelector("#appleResult"), options).render();
 
 }
 
@@ -106,28 +110,28 @@ const dataBussinessUSA = async()=> {
     console.log( 'Resultados Totales Bussiness : ' + businessResults );
 
     // Grafico 
-    var options = {
-        chart: {
-            height: 200,
-            width: 220,
-            type: "donut",
-        },
-        series: [businessResults],
-        plotOptions: {
-            radialBar: {
-            dataLabels: {
-                total: {
-                show: true,
-                label: 'Resultados Totales',
-                series: businessResults
-                }
-            }
-            }
-        },
-        labels: [bussinessName]        
-    };
+    // var options = {
+    //     chart: {
+    //         height: 200,
+    //         width: 220,
+    //         type: "donut",
+    //     },
+    //     series: [businessResults],
+    //     plotOptions: {
+    //         radialBar: {
+    //         dataLabels: {
+    //             total: {
+    //             show: true,
+    //             label: 'Resultados Totales',
+    //             series: businessResults
+    //             }
+    //         }
+    //         }
+    //     },
+    //     labels: [bussinessName]        
+    // };
         
-    new ApexCharts(document.querySelector("#businessResult"), options).render();
+    // new ApexCharts(document.querySelector("#businessResult"), options).render();
 
 }
 
@@ -147,28 +151,28 @@ const dataTech = async() => {
     console.log( 'Resultados Totales Tech : ' + techResults );
 
     // Grafico 
-    var options = {
-        chart: {
-            height: 200,
-            width: 220,
-            type: "donut",
-        },
-        series: [techResults],
-        plotOptions: {
-            radialBar: {
-            dataLabels: {
-                total: {
-                show: true,
-                label: 'Resultados Totales',
-                series: techResults
-                }
-            }
-            }
-        },
-        labels: [techName]        
-    };
+    // var options = {
+    //     chart: {
+    //         height: 200,
+    //         width: 220,
+    //         type: "donut",
+    //     },
+    //     series: [techResults],
+    //     plotOptions: {
+    //         radialBar: {
+    //         dataLabels: {
+    //             total: {
+    //             show: true,
+    //             label: 'Resultados Totales',
+    //             series: techResults
+    //             }
+    //         }
+    //         }
+    //     },
+    //     labels: [techName]        
+    // };
         
-    new ApexCharts(document.querySelector("#techResult"), options).render();
+    // new ApexCharts(document.querySelector("#techResult"), options).render();
     // dasdsdasdsad
     const chartResults = ()=> {
         let options = {
