@@ -38,13 +38,12 @@ li {
 }
 
 /* CANVAS */
-
-/* SIDEBAR */
 canvas {
-	height: 100px;
-	width: 100px;
+	height: 10px;
+	width: 100%;
 }
 
+/* SIDEBAR */
 #sidebar {
 	position: fixed;
 	max-width: 260px;
