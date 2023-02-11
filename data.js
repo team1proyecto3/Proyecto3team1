@@ -15,7 +15,7 @@ const dataBitcoin = async() => {
         
         const response = await fetch(url);
         const main = await response.json();
-        console.log(main)  
+        console.log(main);
         const { totalResults } = main; 
         const bitcoinResults = totalResults;
 
