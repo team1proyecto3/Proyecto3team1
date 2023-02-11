@@ -174,32 +174,32 @@ const dataTech = async() => {
         
     // new ApexCharts(document.querySelector("#techResult"), options).render();
     // dasdsdasdsad
-    const chartResults = ()=> {
-        let options = {
-            chart: {
-              type: 'bar'
-            },
-            plotOptions: {
-                bar: {
-                  horizontal: true
-                }
-              }                
-            ,
-            series: [{
-              name: 'Total Results',
-              data: [techResults]
-            }],
-            xaxis: {
-              categories: [techName]
-            }
-          }
+    // const chartResults = ()=> {
+    //     let options = {
+    //         chart: {
+    //           type: 'bar'
+    //         },
+    //         plotOptions: {
+    //             bar: {
+    //               horizontal: true
+    //             }
+    //           }                
+    //         ,
+    //         series: [{
+    //           name: 'Total Results',
+    //           data: [techResults]
+    //         }],
+    //         xaxis: {
+    //           categories: [techName]
+    //         }
+    //       }
           
-          var chart = new ApexCharts(document.querySelector("#"), options);
+    //       var chart = new ApexCharts(document.querySelector("#"), options);
           
-          chart.render();
-    }
+    //       chart.render();
+    // }
     
-    chartResults();
+    // chartResults();
 
 }
 
