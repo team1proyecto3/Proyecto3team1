@@ -19,9 +19,7 @@
 	--dark-blue: #0C5FCD;
 	--red: #FC3B56;
 }
-
   
-
 html {
 	overflow-x: hidden;
 }
@@ -39,8 +37,14 @@ li {
 	list-style: none;
 }
 
+/* CANVAS */
 
 /* SIDEBAR */
+canvas {
+	height: 100px;
+	width: 100px;
+}
+
 #sidebar {
 	position: fixed;
 	max-width: 260px;
