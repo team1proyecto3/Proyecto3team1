@@ -576,8 +576,9 @@ main .btn-send:hover {
 }
 
 canvas {
-	height: fit-content;
-	width: fit-content;
+	height: auto;
+	width: 100%;
+	padding: 60px;
 }
 /* MAIN */
 /* CONTENT */
